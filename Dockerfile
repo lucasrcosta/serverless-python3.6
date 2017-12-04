@@ -1,4 +1,4 @@
-FROM node:8.1.2
+FROM node:8
 MAINTAINER Lucas Costa <lucas@lucascosta.com>
 
 # python/3.6/Dockerfile from https://github.com/docker-library/python
@@ -90,5 +90,7 @@ RUN set -ex; \
 	rm -f get-pip.py
 
 CMD ["python3"]
+
+RUN pip install awscli
 
 RUN yarn global add serverless
